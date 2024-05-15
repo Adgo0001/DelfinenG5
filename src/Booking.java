@@ -12,29 +12,17 @@ public class Booking {
         System.out.println("Du opretter nu et nyt medlem.");
         System.out.println("Indtast navn: ");
 
-        //Scanner input af Formand
+        //Scanner input af Ledelse
         String name = scan.nextLine();
 
-        boolean active;
         System.out.println("Indtast nummer for aktiv(1) eller passiv(0): ");
-        if (scan.nextInt() == 1) {
-            active = true;
-            
-        } else {
-            active = false;
-        }
+        boolean active = (scan.nextInt() == 1);
 
         System.out.println("Indtast medlems fødselsdato (I formattet xx/xx-xxxx): ");
         String dateOfBirth = scan.next();
 
-        boolean competitive;
         System.out.println("Indtast nummer for konkurrencesvømmer(1) eller motionist(0): ");
-        if (scan.nextInt() == 1) {
-            competitive = true;
-            
-        } else {
-            competitive = false;
-        }
+        boolean competitive = (scan.nextInt() == 1);
 
         System.out.println("Navn: " + name + "\nactive: " + active + "\ndateOfBirth: " + dateOfBirth +"\ncompetitive: "+ competitive);
 
