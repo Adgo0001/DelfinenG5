@@ -39,7 +39,7 @@ public class UI {
         switch (case1SwitchChoice) {
             case 1:
                 System.out.println("opret medlem");
-                //createMember();
+                Booking.createMember(scan);
                 break;
             case 2:
                 System.out.println("rediger medlem");
@@ -47,7 +47,7 @@ public class UI {
                 break;
             case 3:
                 System.out.println("slet medlem");
-                //removeMember
+                Booking.removeMember(scan);
                 break;
             default:
                 System.out.println("ikke muligt, prøv igen.");
