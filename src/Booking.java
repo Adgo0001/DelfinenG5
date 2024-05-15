@@ -43,4 +43,18 @@ public class Booking {
         //members.add(newMember);
 
     }
+    public void deleteUser(Scanner scan){
+        System.out.println("Du sletter nu et medlem.");
+        for(Member member: members){
+            System.out.println(members.toString());
+        }
+        System.out.println("Skriv ID'et på det medlem du vil slette.");
+        int idToRemove = scan.nextInt();
+        /*for(int i = 0; i < members.size(); i++){
+            if(member.getID == idToRemove){
+                members.remove(i);
+                System.out.println("Medlem med id:" + idToRemove + "er nu fjernet");
+            }
+        }*/
+    }
 }
