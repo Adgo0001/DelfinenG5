@@ -46,7 +46,7 @@ public class Booking {
     public void deleteUser(Scanner scan){
         System.out.println("Du sletter nu et medlem.");
         for(Member member: members){
-            System.out.println(members.toString());
+            System.out.println(member.toString());
         }
         System.out.println("Skriv ID'et på det medlem du vil slette.");
         int idToRemove = scan.nextInt();
