@@ -3,12 +3,14 @@ import java.util.*;
 public class UI {
     public static void menu() {
         Scanner scan = new Scanner(System.in);
-        while(){
+        int menuChoice = 0;
+        while(menuChoice != -1){
             System.out.println("Hvad kunne du tænkte dig at gøre?");
             System.out.println("1. Medlemshåndtering");
             System.out.println("2. Økonomi");
             System.out.println("3. ");
-            int menuChoice = scan.nextInt();
+            System.out.println("9. Afslut program");
+            menuChoice = scan.nextInt();
 
             switch (menuChoice) {
                 case 1:
@@ -21,10 +23,12 @@ public class UI {
                     break;
                 case 3:
                     System.out.println("3. Svømme");
-                    //();
+                    break;
+                case 9:
+                    menuChoice = -1;
+                    break;
                 default:
                     System.out.println("Ikke muligt, prøv igen");
-                    menu();
                     break;
             }
         }

@@ -34,6 +34,14 @@ public class Member {
     }
 
     public String toString() {
-        return "Navn: " + name + "\nTelefonnummer: " + phoneNumber + "\nactive: " + active + "\ndateOfBirth: " + birthYear + "\ncompetitive: " + competitive;
+        String aktiv = "Nej";
+        String konkurrence = "Nej";
+        if (active) {
+            aktiv = "Ja";
+        }
+        if (competitive) {
+            konkurrence = "Ja";
+        }
+        return "Navn: " + name + "\nTelefonnummer: " + phoneNumber + "\nAktiv: " + aktiv + "\nFødselsår: " + birthYear + "\nKonkurrencesvømmer: " + konkurrence;
     }
 }
