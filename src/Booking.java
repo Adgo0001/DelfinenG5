@@ -45,10 +45,10 @@ public class Booking {
         System.out.println("Du sletter nu et medlem.");
         System.out.println("Skriv telefonnummeret på det medlem du vil slette.");
         int phoneNumber = scan.nextInt();
-        int whatever = 0;
+        boolean found = false;
         for (Member member : members) {
             if (member.getPhoneNumber() == phoneNumber) {
-                whatever = 1;
+                found = true;
                 System.out.println(member);
                 System.out.println("For at bekræfte sletning tryk 1. For at annullere tryk 0.");
                 int svar = scan.nextInt();
@@ -63,7 +63,7 @@ public class Booking {
                 }
             }
         }
-        if (whatever == 0) {
+        if (!found) {
             System.out.println("Ingen bruger fundet.");
         }
     }
