@@ -44,4 +44,17 @@ public class Member {
         }
         return "Navn: " + name + "\nTelefonnummer: " + phoneNumber + "\nAktiv: " + aktiv + "\nFødselsår: " + birthYear + "\nKonkurrencesvømmer: " + konkurrence;
     }
+
+    public int calcMemberPrice(int[] priceList) {
+        if (!active) {
+            return priceList[0];
+        } else if (ageGroup == "Junior") {
+            return priceList[1];
+        } else if (ageGroup == "Senior") {
+            return priceList[2];
+        } else {
+            return priceList[3];
+        }
+    }
+
 }

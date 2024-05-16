@@ -3,9 +3,16 @@ import java.util.Scanner;
 
 public class Booking {
     //0: Passiv, 1: Under 18, 2: Over 18, 3:Over 60
-    int[] priceList = {500, 1000, 1600, 1200};
+    private static int[] priceList = {500, 1000, 1600, 1200};
 
-    static ArrayList<Member> members = new ArrayList<>();
+    private static ArrayList<Member> members = new ArrayList<>();
+
+    public static int[] getPriceList () {
+        return priceList;
+    }
+    public static ArrayList<Member> getMembers() {
+        return members;
+    }
 
     public static void createMember(Scanner scan) {
 
