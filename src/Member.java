@@ -1,13 +1,13 @@
 import java.time.Year;
 
 public class Member {
-    String name;
-    int phoneNumber;
-    boolean active;
-    int birthYear;
-    String ageGroup;
-    boolean competitive;
-    boolean restance;
+    private String name;
+    private int phoneNumber;
+    private boolean active;
+    private int birthYear;
+    private String ageGroup;
+    private boolean competitive;
+    private boolean restance;
 
     public Member(String name, int phoneNumber, boolean active, int birthYear, boolean competitive){
         this.name = name;

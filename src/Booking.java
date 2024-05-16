@@ -29,7 +29,7 @@ public class Booking {
         boolean competitive = (scan.nextInt() == 1);
 
 
-        System.out.println("Navn: " + name + "\nTelefonnummer: " + phoneNumber + "\nactive: " + active + "\ndateOfBirth: " + birthYear + "\ncompetitive: " + competitive);
+        System.out.println("Navn: " + name + "\nTelefonnummer: " + phoneNumber + "\nAktiv: " + active + "\nFødselsår: " + birthYear + "\nKonkurrencesvømmer: " + competitive);
 
         //Konstruer member object med scanner input
         Member newMember = new Member(name, phoneNumber, active, birthYear, competitive);

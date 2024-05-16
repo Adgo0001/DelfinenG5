@@ -3,29 +3,30 @@ import java.util.*;
 public class UI {
     public static void menu() {
         Scanner scan = new Scanner(System.in);
+        while(){
+            System.out.println("Hvad kunne du tænkte dig at gøre?");
+            System.out.println("1. Medlemshåndtering");
+            System.out.println("2. Økonomi");
+            System.out.println("3. ");
+            int menuChoice = scan.nextInt();
 
-        System.out.println("Hvad kunne du tænkte dig at gøre?");
-        System.out.println("1. Medlemshåndtering");
-        System.out.println("2. Økonomi");
-        System.out.println("3. ");
-        int menuChoice = scan.nextInt();
-
-        switch (menuChoice) {
-            case 1:
-                System.out.println("1. Medlemshåndtering.");
-                case1SwitchMenu(scan);
-                break;
-            case 2:
-                System.out.println("2. Økonomi");
-                case2SwitchMenu(scan);
-                break;
-            case 3:
-                System.out.println("3. Svømme");
-                //();
-            default:
-                System.out.println("Ikke muligt, prøv igen");
-                menu();
-                break;
+            switch (menuChoice) {
+                case 1:
+                    System.out.println("1. Medlemshåndtering.");
+                    case1SwitchMenu(scan);
+                    break;
+                case 2:
+                    System.out.println("2. Økonomi");
+                    case2SwitchMenu(scan);
+                    break;
+                case 3:
+                    System.out.println("3. Svømme");
+                    //();
+                default:
+                    System.out.println("Ikke muligt, prøv igen");
+                    menu();
+                    break;
+            }
         }
     }
 
