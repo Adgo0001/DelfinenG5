@@ -46,7 +46,7 @@ public class UI {
                     break;
                 case 2:
                     System.out.println("rediger medlem");
-                    //editMember();
+                    Booking.editMember(scan);
                     break;
                 case 3:
                     Booking.removeMember(scan);

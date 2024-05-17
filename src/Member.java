@@ -29,8 +29,44 @@ public class Member {
         this.restance = false;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public int getPhoneNumber() {
         return phoneNumber;
+    }
+
+    public boolean getActive() {
+        return active;
+    }
+
+    public int getBirthYear() {
+        return birthYear;
+    }
+
+    public boolean getCompetitive() {
+        return competitive;
+    }
+
+    public void setName(String newName) {
+        this.name = newName;
+    }
+
+    public void setPhoneNumber(int newPhoneNumber) {
+        this.phoneNumber = newPhoneNumber;
+    }
+
+    public void setActive(boolean newActive) {
+        this.active = newActive;
+    }
+
+    public void setBirthYear(int newBirthYear) {
+        this.birthYear = newBirthYear;
+    }
+
+    public void setCompetitive(boolean newCompetitive) {
+        this.competitive = newCompetitive;
     }
 
     public String toString() {
