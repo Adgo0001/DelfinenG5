@@ -159,12 +159,25 @@ public class Booking {
         for (Member member : members) {
             if (member.getPhoneNumber() == phoneNumber) {
                 found = true;
-                System.out.println(member);
-                member.changeRestance();
                 if (member.getRestance()) {
-                    System.out.println("Medlem med telefonnummer:" + phoneNumber + " er nu i restance.");
+                    System.out.print(member.getName() + " er lige nu i restance. For at fjerne restance, tryk 1. ");
                 } else {
-                    System.out.println("Medlem med telefonnummer:" + phoneNumber + " er nu IKKE i restance");
+                    System.out.print(member.getName() + " er lige nu IKKE i restance. For at sætte i restance, tryk 1. ");
+                }
+                System.out.println("For at annullere tryk 0.");
+                int svar = scan.nextInt();
+                if (svar == 1) {
+                    member.changeRestance();
+                    if (member.getRestance()) {
+                        System.out.println(member.getName() + " er nu i restance.");
+                    } else {
+                        System.out.println(member.getName() + " er nu IKKE i restance.");
+                    }
+                    break;
+                } else if (svar == 0) {
+                    System.out.println("Ingen bruger er ændret.");
+                } else {
+                    System.out.println("Dette ser forkert ud, prøv igen.");
                 }
             }
         }
