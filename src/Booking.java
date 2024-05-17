@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Booking {
@@ -20,14 +21,14 @@ public class Booking {
         priceList[3] = scan.nextInt();
     }
 
-    private static ArrayList<Member> members = new ArrayList<>();
+    private static ArrayList<Member> members = new ArrayList<>(Arrays.asList(new Member("Adrian", 12345678, true, 2020, true)));
 
     public static int[] getPriceList () {
         return priceList;
     }
     public static ArrayList<Member> getMembers() {
         return members;
-    }
+    }    
 
     public static void createMember(Scanner scan) {
 
