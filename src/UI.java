@@ -64,7 +64,7 @@ public class UI {
             System.out.println("\nHvad kunne du tænkte dig at gøre med økonomien?");
             System.out.println("1. Se omsætning.");
             System.out.println("2. Se restancer.");
-            System.out.println("3. ");
+            System.out.println("3. Ændre kontingent priser.");
             System.out.println("9. Gå til hovedmenu.");
             int case2SwitchChoice = scan.nextInt();
 
@@ -78,7 +78,7 @@ public class UI {
                     break;
                 case 3:
                     System.out.println(" ");
-                    //();
+                    Booking.updatePrices(scan);
                     break;
                 case 9:
                     break;

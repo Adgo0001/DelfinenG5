@@ -5,6 +5,21 @@ public class Booking {
     //0: Passiv, 1: Under 18, 2: Over 18, 3:Over 60
     private static int[] priceList = {500, 1000, 1600, 1200};
 
+    public static void updatePrices(Scanner scan) {
+        System.out.println("Nuværende Passiv pris: " + priceList[0] + ",-");
+        System.out.println("Hvad skal den nye pris på Passiv være?");
+        priceList[0] = scan.nextInt();
+        System.out.println("Nuværende Junior pris: " + priceList[1] + ",-");
+        System.out.println("Hvad skal den nye pris på Junior være?");
+        priceList[1] = scan.nextInt();
+        System.out.println("Nuværende Senior pris: " + priceList[2] + ",-");
+        System.out.println("Hvad skal den nye pris på Senior være?");
+        priceList[2] = scan.nextInt();
+        System.out.println("Nuværende Pensionist pris: " + priceList[3] + ",-");
+        System.out.println("Hvad skal den nye pris på Pensionist være?");
+        priceList[3] = scan.nextInt();
+    }
+
     private static ArrayList<Member> members = new ArrayList<>();
 
     public static int[] getPriceList () {
