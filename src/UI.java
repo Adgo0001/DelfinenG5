@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.*;
 
 public class UI {
@@ -65,6 +66,7 @@ public class UI {
             System.out.println("1. Se omsætning.");
             System.out.println("2. Se restancer.");
             System.out.println("3. Ændre kontingent priser.");
+            System.out.println("4. Sæt/fjern medlem i restance");
             System.out.println("9. Gå til hovedmenu.");
             int case2SwitchChoice = scan.nextInt();
 
@@ -73,12 +75,13 @@ public class UI {
                     Finance.checkRevenue();
                     break;
                 case 2:
-                    System.out.println("RESTANCER");
                     //printMembersRestance();
                     break;
                 case 3:
-                    System.out.println(" ");
                     Booking.updatePrices(scan);
+                    break;
+                case 4:
+                    Booking.updateRestance(scan);
                     break;
                 case 9:
                     break;

@@ -49,6 +49,10 @@ public class Member {
         return competitive;
     }
 
+    public boolean getRestance() {
+        return restance;
+    }
+
     public void setName(String newName) {
         this.name = newName;
     }
@@ -67,6 +71,10 @@ public class Member {
 
     public void setCompetitive(boolean newCompetitive) {
         this.competitive = newCompetitive;
+    }
+
+    public void changeRestance() {
+        this.restance = !this.restance;
     }
 
     public String toString() {

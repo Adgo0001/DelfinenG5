@@ -150,5 +150,26 @@ public class Booking {
             System.out.println("Ingen bruger fundet.");
         }
     }
+
+    public static void updateRestance(Scanner scan){
+        System.out.println("Indtast telefonnummer for medlem du vil ændre restance på:");
+        int phoneNumber = scan.nextInt();
+        boolean found = false;
+        for (Member member : members) {
+            if (member.getPhoneNumber() == phoneNumber) {
+                found = true;
+                System.out.println(member);
+                member.changeRestance();
+                if (member.getRestance()) {
+                    System.out.println("Medlem med telefonnummer:" + phoneNumber + " er nu i restance.");
+                } else {
+                    System.out.println("Medlem med telefonnummer:" + phoneNumber + " er nu IKKE i restance");
+                }
+            }
+        }
+        if (!found) {
+            System.out.println("Ingen bruger fundet.");
+        }
+    }
 }
 
