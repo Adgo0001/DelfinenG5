@@ -6,6 +6,7 @@ public class UI {
         Scanner scan = new Scanner(System.in);
         int menuChoice = 0;
         while(menuChoice != -1){
+            System.out.println("-----------------------------------");
             System.out.println("\nHvad kunne du tænkte dig at gøre?");
             System.out.println("1. Medlemshåndtering.");
             System.out.println("2. Økonomi.");
@@ -78,7 +79,7 @@ public class UI {
                     Finance.checkRevenue();
                     break;
                 case 2:
-                    //printMembersRestance();
+                    Finance.printMembersInRestance();
                     break;
                 case 3:
                     Booking.updatePrices(scan);
