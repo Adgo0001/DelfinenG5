@@ -22,3 +22,15 @@ public class Finance {
         }
     }
 }
+
+
+// while (input.hasNextLine()) {
+//       String line = input.nextLine();
+//       Scanner lineScan = new Scanner(line);
+//
+//       int number = lineScan.nextInt();
+//       String something = lineScan.next();
+//       String svømmedicipliner = "";
+//       while (lineScan.hasNext() && !lineScan.hasNextInt()) {
+//           somethings2 += lineScan.next();
+//       }
