@@ -6,8 +6,9 @@ public class UI {
         Scanner scan = new Scanner(System.in);
         int menuChoice = 0;
         while(menuChoice != -1){
+            Booking.saveMembers();
             System.out.println("-----------------------------------");
-            System.out.println("\nHvad kunne du tænkte dig at gøre?");
+            System.out.println("Hvad kunne du tænkte dig at gøre?");
             System.out.println("1. Medlemshåndtering.");
             System.out.println("2. Økonomi.");
             System.out.println("3. Se svømmeresultater.");
@@ -57,6 +58,7 @@ public class UI {
                     Booking.removeMember(scan);
                     break;
                 case 9:
+
                     break;
                 default:
                     System.out.println("Ikke muligt, prøv igen!");
@@ -88,6 +90,7 @@ public class UI {
                     Booking.updateRestance(scan);
                     break;
                 case 9:
+
                     break;
                 default:
                     System.out.println("Ikke muligt, prøv igen!");
@@ -114,6 +117,7 @@ public class UI {
                     //();
                     break;
                 case 9:
+
                     break;
                 default:
                     System.out.println("Ikke muligt, prøv igen!");
