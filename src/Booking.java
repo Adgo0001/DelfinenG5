@@ -188,7 +188,14 @@ public class Booking {
     public static void saveMembers(){
         StringBuilder sb = new StringBuilder();
         for(Member member: members){
-            sb.append(member.toString().replace("\n", ","));
+            sb.append(member.getName()).append(",");
+            sb.append(member.getPhoneNumber()).append(",");
+            sb.append(member.getActive()).append(",");
+            sb.append(member.getBirthYear()).append(",");
+            sb.append(member.getCompetitive()).append(",");
+            sb.append(member.getRestance()).append(",");
+            sb.append("endOfMember");
+            sb.append("\n");
         }
         FileHandler.writeMember(sb.toString());
 

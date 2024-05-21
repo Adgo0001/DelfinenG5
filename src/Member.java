@@ -29,6 +29,26 @@ public class Member {
         this.restance = false;
     }
 
+    public Member(String name, int phoneNumber, boolean active, int birthYear, boolean competitive, boolean restance) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.active = active;
+        this.birthYear = birthYear;
+
+        int year = Year.now().getValue();
+        int age = year - birthYear;
+
+        if (age < 18) {
+            this.ageGroup = "Junior";
+        } else if (age < 60) {
+            this.ageGroup = "Senior";
+        } else {
+            this.ageGroup = "Pensionist";
+        }
+        this.competitive = competitive;
+        this.restance = restance;
+    }
+
     public String getName() {
         return name;
     }

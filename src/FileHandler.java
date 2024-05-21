@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class FileHandler {
     public static void writeMember(String content){
-        try(BufferedWriter writer = new BufferedWriter(new FileWriter("src\\members.txt", true))){
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter("src\\members.txt", false))){
             writer.append(content);
             writer.newLine();
         }catch (IOException e){

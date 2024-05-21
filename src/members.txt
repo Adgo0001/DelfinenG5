@@ -1,0 +1,3 @@
+Banan,12345678,true,2020,true,false,endOfMember
+Ali,19191919,true,1999,true,false,endOfMember
+
