@@ -1,3 +1,4 @@
-Banan,12345678,true,2020,true,false,endOfMember
-Ali,19191919,true,1999,true,false,endOfMember
-
+Adrian,121212,true,2020,true,false,endOfMember
+Banan,131313,true,2020,true,false,endOfMember
+Ali,141414,true,1999,true,true,endOfMember
+Marcus,151515,true,1999,true,false,endOfMember

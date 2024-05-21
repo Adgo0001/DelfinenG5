@@ -21,7 +21,7 @@ public class Booking {
         priceList[3] = scan.nextInt();
     }
 
-    private static ArrayList<Member> members = new ArrayList<>(Arrays.asList(new Member("Adrian", 12345678, true, 2020, true)));
+    private static ArrayList<Member> members = new ArrayList<> ();
 
     public static int[] getPriceList () {
         return priceList;
@@ -54,6 +54,11 @@ public class Booking {
         //Konstruer member object med scanner input
         Member newMember = new Member(name, phoneNumber, active, birthYear, competitive);
         System.out.println(newMember);
+        members.add(newMember);
+    }
+
+    public static void recreateMember(String name, int phoneNumber, boolean active, int birthYear, boolean competitive, boolean restance) {
+        Member newMember = new Member(name, phoneNumber, active, birthYear, competitive, restance);
         members.add(newMember);
     }
 
