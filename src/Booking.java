@@ -185,5 +185,13 @@ public class Booking {
             System.out.println("Ingen bruger fundet.");
         }
     }
+    public static void saveMembers(){
+        StringBuilder sb = new StringBuilder();
+        for(Member member: members){
+            sb.append(member.toString().replace("\n", ","));
+        }
+        FileHandler.writeMember(sb.toString());
+
+    } //TODO ændre saveUsers til saveMembers i klassediagrammet
 }
 

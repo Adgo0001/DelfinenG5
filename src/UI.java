@@ -23,6 +23,9 @@ public class UI {
                 case 3:
                     case3SwitchMenu(scan);
                     break;
+                case 4:
+                    Booking.saveMembers();
+                    break;
                 case 9:
                     menuChoice = -1;
                     break;
