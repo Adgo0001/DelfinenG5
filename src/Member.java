@@ -1,4 +1,5 @@
 import java.time.Year;
+import java.util.ArrayList;
 
 public class Member {
     private String name;
@@ -8,8 +9,10 @@ public class Member {
     private String ageGroup;
     private boolean competitive;
     private boolean restance;
+    private String trainer;
+    private ArrayList<Discipline> disciplines = new ArrayList<> ();
 
-    public Member(String name, int phoneNumber, boolean active, int birthYear, boolean competitive){
+    public Member(String name, int phoneNumber, boolean active, int birthYear){
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.active = active;
@@ -25,11 +28,12 @@ public class Member {
         } else {
             this.ageGroup = "Pensionist";
         }
-        this.competitive = competitive;
+        this.competitive = false;
         this.restance = false;
+        this.trainer = "Ingen træner";
     }
 
-    public Member(String name, int phoneNumber, boolean active, int birthYear, boolean competitive, boolean restance) {
+    public Member(String name, int phoneNumber, boolean active, int birthYear, boolean competitive, boolean restance, String trainer) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.active = active;
@@ -47,6 +51,7 @@ public class Member {
         }
         this.competitive = competitive;
         this.restance = restance;
+        this.trainer = trainer;
     }
 
     public String getName() {
@@ -97,6 +102,18 @@ public class Member {
         this.restance = !this.restance;
     }
 
+    public void setTrainer(String newTrainer){
+        this.trainer = newTrainer;
+    }
+
+    public String getTrainer(){
+        return trainer;
+    }
+
+    public ArrayList<Discipline> getDisciplines(){
+        return disciplines;
+    }
+
     public String toString() {
         String aktiv = "Nej";
         String konkurrence = "Nej";
@@ -121,4 +138,20 @@ public class Member {
         }
     }
 
+    public void addMemberDiscipline(int valg, float pr) {
+        switch (valg) {
+            case 1:
+                disciplines.add(new Discipline("Butterfly", pr));
+                break;
+            case 2:
+                disciplines.add(new Discipline("Crawl", pr));
+                break;
+            case 3:
+                disciplines.add(new Discipline("Rygcrawl", pr));
+                break;
+            case 4:
+                disciplines.add(new Discipline("Brystsvømning", pr));
+                break;
+        }
+    }
 }

@@ -25,9 +25,6 @@ public class UI {
                 case 3:
                     case3SwitchMenu(scan);
                     break;
-                case 4:
-                    Booking.saveMembers();
-                    break;
                 case 9:
                     menuChoice = -1;
                     break;
@@ -43,6 +40,10 @@ public class UI {
             System.out.println("1. Opret medlem.");
             System.out.println("2. Rediger medlem.");
             System.out.println("3. Slet medlem.");
+            System.out.println("4. Ændr medlems konkurrencestatus");
+            System.out.println("5. Tilføj/rediger træner til et medlem");
+            System.out.println("6. Tilføj disciplin til et medlem");
+            System.out.println("7. Tilføj event til et medlem");
             System.out.println("9. Gå til hovedmenu.");
             int case1SwitchChoice = scan.nextInt();
 
@@ -57,8 +58,16 @@ public class UI {
                 case 3:
                     Booking.removeMember(scan);
                     break;
+                case 4:
+                    Booking.editCompetitive(scan);
+                    break;
+                case 5:
+                    Booking.editTrainer(scan);
+                    break;
+                case 6:
+                    Booking.addDiscipline(scan);
+                    break;
                 case 9:
-
                     break;
                 default:
                     System.out.println("Ikke muligt, prøv igen!");

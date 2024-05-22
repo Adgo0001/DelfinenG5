@@ -1,5 +1,2 @@
-bente bent,121212,true,1200,true,true,endOfMember
-Banan,131313,true,2020,true,false,endOfMember
-Ali,141414,true,1999,true,true,endOfMember
-Marcus,151515,true,1999,true,false,endOfMember
-
+Banan,131313,true,2020,true,false,Træner Marcus,endOfMember
+Ali,19191919,true,1999,false,false,Træner Marcus,endOfMember

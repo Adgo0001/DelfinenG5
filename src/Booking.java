@@ -48,17 +48,14 @@ public class Booking {
         System.out.println("Indtast medlems fødselsår (I formattet xxxx): ");
         int birthYear = scan.nextInt();
 
-        System.out.println("Indtast nummer for konkurrencesvømmer(1) eller motionist(0): ");
-        boolean competitive = (scan.nextInt() == 1);
-
         //Konstruer member object med scanner input
-        Member newMember = new Member(name, phoneNumber, active, birthYear, competitive);
+        Member newMember = new Member(name, phoneNumber, active, birthYear);
         System.out.println(newMember);
         members.add(newMember);
     }
 
-    public static void recreateMember(String name, int phoneNumber, boolean active, int birthYear, boolean competitive, boolean restance) {
-        Member newMember = new Member(name, phoneNumber, active, birthYear, competitive, restance);
+    public static void recreateMember(String name, int phoneNumber, boolean active, int birthYear, boolean competitive, boolean restance, String trainer) {
+        Member newMember = new Member(name, phoneNumber, active, birthYear, competitive, restance, trainer);
         members.add(newMember);
     }
 
@@ -103,15 +100,6 @@ public class Booking {
                     newBirthYear = newBirthYear / 10;
                 }
 
-                System.out.println("Indtast nummer for konkurrencesvømmer(1) eller motionist(0): ");
-                String input2 = scan.nextLine()+"0";
-                boolean newCompetitive;
-                if (input2.equals("0")) {
-                    newCompetitive = member.getCompetitive();
-                } else {
-                    newCompetitive = (Integer.parseInt(input2) == 10);
-                }
-
                 System.out.println("For at bekræfte tilføjelsen tryk 1. For at annullere tryk 0.");
                 int svar = scan.nextInt();
                 if (svar == 1) {
@@ -119,7 +107,6 @@ public class Booking {
                     member.setPhoneNumber(newPhoneNumber);
                     member.setActive(newActive);
                     member.setBirthYear(newBirthYear);
-                    member.setCompetitive(newCompetitive);
                     System.out.println(member);
                     System.out.println("Medlemmet er nu ændret.");
                     break;
@@ -127,6 +114,86 @@ public class Booking {
                     System.out.println("Ingen bruger er blevet redigeret.");
                 }
             }
+        }
+    }
+
+    public static void editCompetitive(Scanner scan){
+        System.out.println("Hvilket medlem kunne du tænke dig ændre konkurrencestatus på? (Indtast telefonnummer):");
+        int phoneNumber = scan.nextInt();
+
+        for(Member member : members) {
+            if (member.getPhoneNumber() == phoneNumber) {
+                if (member.getCompetitive()) {
+                    System.out.println(member.getName() + " er lige nu en konkurrencesvømmer.");
+                } else {
+                    System.out.println(member.getName() + " er lige nu IKKE en konkurrencesvømmer.");
+                }
+                System.out.println("Vil du ændre medlemmets konkurrencestatus? (j/n): ");
+                char svar = scan.next().charAt(0);
+                if (svar == 'j') {
+                    member.setCompetitive(!member.getCompetitive());
+                    System.out.println("Konkurrencestatus for " + member.getName() + " er nu ændret.");
+                } else {
+                    System.out.println("Ingen ændringer foretaget.");
+                }
+            }
+        }
+    }
+
+    public static void editTrainer(Scanner scan){
+        System.out.println("Hvilket medlem kunne du tænke dig tilføje/ændre træner på? (Indtast telefonnummer):");
+        int phoneNumber = scan.nextInt();
+
+        for(Member member : members) {
+            if (member.getPhoneNumber() == phoneNumber) {
+                System.out.println(member.getName() + " har lige nu træner: " + member.getTrainer() + ".");
+                System.out.println("Vil du ændre medlemmets træner? (j/n): ");
+                char svar = scan.next().charAt(0);
+                String newTrainer;
+                if (svar == 'j') {
+                    System.out.println("Indtast trænerens navn: ");
+                    scan.nextLine();
+                    newTrainer = scan.nextLine();
+                    member.setTrainer(newTrainer);
+                    System.out.println("Medlemmet har nu fået ny træner.");
+                } else {
+                    System.out.println("Ingen ændringer foretaget.");
+                }
+            }
+        }
+    }
+
+    public static void addDiscipline(Scanner scan) {
+        System.out.println("Hvilket medlem kunne du tænke dig at tilføje disciplin til? (Indtast telefonnummer).");
+        int phoneNumber = scan.nextInt();
+
+        for(Member member : members){
+            if (member.getPhoneNumber() == phoneNumber) {
+                System.out.print(member.getName() + " har lige nu disciplinerne: ");
+                if (member.getDisciplines().isEmpty()) {
+                    System.out.println("Ingen discipliner");
+                }
+                for (Discipline discipline: member.getDisciplines()) {
+                    System.out.print(discipline + ", ");
+                }
+                System.out.println();
+                System.out.println("Vælg ny disciplin (1: butterfly, 2: crawl, 3: rygcrawl, 4: brystsvømning): ");
+                int valg = scan.nextInt();
+                // TODO: indsæt fejlbehandling hvis man taster andet end 1-4
+                System.out.println("Vil du tilføje en PR til denne disciplin? (j/n): ");
+                char addPR = scan.next().charAt(0);
+                if (addPR == 'j'){
+                    System.out.println("Indtast PR (minutter.sekunder fx 7,58): ");
+                    float pr = scan.nextFloat();
+                    member.addMemberDiscipline(valg, pr);
+                    System.out.println("Ny disciplin med PR tilføjet.");
+                } else {
+                    member.addMemberDiscipline(valg, 0.0f);
+                    System.out.println("Ny disciplin uden PR tilføjet.");
+                }
+            }
+
+
         }
     }
 
@@ -192,6 +259,7 @@ public class Booking {
     }
     public static void saveMembers(){
         StringBuilder sb = new StringBuilder();
+        int a = 0;
         for(Member member: members){
             sb.append(member.getName()).append(",");
             sb.append(member.getPhoneNumber()).append(",");
@@ -199,8 +267,12 @@ public class Booking {
             sb.append(member.getBirthYear()).append(",");
             sb.append(member.getCompetitive()).append(",");
             sb.append(member.getRestance()).append(",");
+            sb.append(member.getTrainer()).append(",");
             sb.append("endOfMember");
-            sb.append("\n");
+            a++;
+            if (a < members.size()) {
+                sb.append("\n");
+            }
         }
         FileHandler.writeMember(sb.toString());
 
