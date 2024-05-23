@@ -14,8 +14,9 @@ public class Discipline {
         return type + ": " + bestTime + " (min,sek)";
     }
 
-    public void createEvent(String eventType, float eventBestTime, int eventPlacement, String disciplineType){
-        events.add(new Event(eventType, eventBestTime, eventPlacement, disciplineType));
+    public void createEvent(String eventName, float eventBestTime, int eventPlacement, String disciplineType){
+        events.add(new Event(eventName, eventBestTime, eventPlacement, disciplineType));
+        compareTime(eventBestTime);
     }
 
     public ArrayList<Event> getEvents(){
@@ -28,5 +29,11 @@ public class Discipline {
     
     public float getBestTime(){
         return bestTime;
+    }
+
+    public void compareTime(float newTime){
+        if (newTime<bestTime) {
+            this.bestTime = newTime;   
+        }
     }
 }

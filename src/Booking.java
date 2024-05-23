@@ -221,7 +221,7 @@ public class Booking {
                 boolean found = false;
                 for (Discipline discipline : member.getDisciplines()) {
                     if (discipline.getType().toLowerCase().equals(disciplineNames[valg-1].toLowerCase())) {
-                        System.out.println("Navn på eventet?");
+                        System.out.println("Navn på eventet? (Eventnavn + dato)");
                         scan.nextLine();
                         String eventName = scan.nextLine();
         

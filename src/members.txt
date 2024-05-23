@@ -1,2 +1,3 @@
-Banan,131313,true,2020,true,false,Træner Marcus,endOfMember,Brystsvømning,7.21,endOfDisciplines,Hutlighut,20,30.15,brystsvømningendOfEvents
+Banan,131313,true,2020,true,false,Træner Marcus,endOfMember,Brystsvømning,7.21,endOfDisciplines,Hutlighut,20,30.15,brystsvømning,endOfEvents
 Ali,19191919,true,1999,false,false,Træner Marcus,endOfMember,Butterfly,10.5,Rygcrawl,0.0,endOfDisciplines,endOfEvents
+Marcus,12121212,true,1642,true,false,Tr�ner Ali,endOfMember,Butterfly,0.1,endOfDisciplines,Den store sommerfugl turnering og bagedyst,50,12.24,butterfly,Hutlighust,1,60.2,butterfly,Kanban,60,12.32,butterfly,endOfEvents

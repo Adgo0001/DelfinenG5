@@ -50,25 +50,21 @@ public class FileHandler {
                     curMember.addMemberDiscipline(4, bestTime);
                 }
             }
+            cnt++;
+            while (!details[cnt].equals("endOfEvents")) {
+                String eventName = details[cnt];
+                int placement = Integer.parseInt(details[cnt+1]);
+                float eventBestTime = Float.parseFloat(details[cnt+2]);
+                String eventType = details[cnt+3];
+                for (Discipline discipline : curMember.getDisciplines()) {
 
-            /*while (!details[cnt].equals("endOfEvents")) {
-                String type = details[cnt];
-                float bestTime = Float.parseFloat(details[cnt+1]);
-                cnt += 2;
-                if(type.toLowerCase().equals("butterfly")){
-                    curMember.addMemberDiscipline(1, bestTime);
+                    if(discipline.getType().toLowerCase().equals(eventType.toLowerCase())){
+                        discipline.createEvent(eventName, eventBestTime, placement, eventType);
+                    }
+                    
                 }
-                if(type.toLowerCase().equals("crawl")){
-                    curMember.addMemberDiscipline(2, bestTime);
-                }
-                if(type.toLowerCase().equals("rygcrawl")){
-                    curMember.addMemberDiscipline(3, bestTime);
-                }
-                if(type.toLowerCase().equals("brystsvømning")){
-                    curMember.addMemberDiscipline(4, bestTime);
-                }
-            
-            }*/
+                cnt += 4;          
+            }
                
         }
     }
