@@ -67,6 +67,7 @@ public class FileHandler {
                 if(type.toLowerCase().equals("brystsvømning")){
                     curMember.addMemberDiscipline(4, bestTime);
                 }
+            }
                
         }
     }
