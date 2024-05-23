@@ -326,7 +326,7 @@ public class Booking {
                     sb.append(event.getName()).append(",");
                     sb.append(event.getPlacement()).append(",");
                     sb.append(event.getTime()).append(",");
-                    sb.append(event.getType());
+                    sb.append(event.getType()).append(",");
                 }
             }
             sb.append("endOfEvents");

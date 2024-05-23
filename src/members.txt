@@ -1,2 +1,2 @@
-Banan,131313,true,2020,true,false,Træner Marcus,endOfMember,endOfDisciplines,endOfEvents
+Banan,131313,true,2020,true,false,Træner Marcus,endOfMember,Brystsvømning,7.21,endOfDisciplines,Hutlighut,20,30.15,brystsvømningendOfEvents
 Ali,19191919,true,1999,false,false,Træner Marcus,endOfMember,Butterfly,10.5,Rygcrawl,0.0,endOfDisciplines,endOfEvents

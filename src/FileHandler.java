@@ -33,7 +33,7 @@ public class FileHandler {
             }
 
             int cnt = 8;
-            while (!details[cnt].equals("endOfDiscipline")) {
+            while (!details[cnt].equals("endOfDisciplines")) {
                 String type = details[cnt];
                 float bestTime = Float.parseFloat(details[cnt+1]);
                 cnt += 2;
