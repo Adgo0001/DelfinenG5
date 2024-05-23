@@ -111,18 +111,18 @@ public class UI {
         }
         public static void case3SwitchMenu(Scanner scan) {
             System.out.println("\nHvad kunne du tænkte dig at gøre med svømmeresultater?");
-            System.out.println("1. Se...");
-            System.out.println("2. Se...");
+            System.out.println("1. Se  præstationsark");
+            System.out.println("2. Se top 5");
             System.out.println("3. ");
             System.out.println("9. Gå til hovedmenu.");
             int case2SwitchChoice = scan.nextInt();
 
             switch (case2SwitchChoice) {
                 case 1:
-                    Finance.checkRevenue();
+                    Booking.printPerformanceChart();
                     break;
                 case 2:
-                    //();
+                    Booking.top5();
                     break;
                 case 3:
                     //();

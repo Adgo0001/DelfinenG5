@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.Collections;
+
+import javax.management.modelmbean.ModelMBeanAttributeInfo;
 
 public class Booking {
     //0: Passiv, 1: Under 18, 2: Over 18, 3:Over 60
@@ -336,7 +339,74 @@ public class Booking {
             }
         }
         FileHandler.writeMember(sb.toString());
-
     } //TODO ændre saveUsers til saveMembers i klassediagrammet
+
+    public static void printPerformanceChart(){
+        for (Member member : members) {
+            member.printBestTimes();
+        }
+    }
+
+    public static void top5(){
+        ArrayList<Member> seniorMembers = new ArrayList<>();
+        ArrayList<Member> juniorMembers = new ArrayList<>();
+        
+        for (Member member : members) {
+            if(member.getAgeGroup().equals("Junior")){
+                juniorMembers.add(member);
+            }
+            else{
+                seniorMembers.add(member);
+            }
+        }
+
+        String[] disciplineNames = {"Butterfly", "Crawl", "Rygcrawl", "Brystsvømning"};
+
+        ArrayList<Discipline> times = new ArrayList<>();
+        //Loop over juniors 
+        System.out.println();
+        System.out.println("Junior Top 5:");
+        System.out.println();
+        for (int i = 0; i < 4; i++) {
+            for (Member member : juniorMembers) {
+                for (Discipline discipline : member.getDisciplines()) {
+                    if (discipline.getType().equals(disciplineNames[i]) && discipline.getBestTime() != 0.0f) {
+                        times.add(discipline);
+                    }
+                }
+            }
+            Collections.sort(times);
+            System.out.println(disciplineNames[i]+": ");
+            for (Discipline discipline : times) {
+                System.out.println(discipline.getOwner() +" - " + discipline.getBestTime());
+            }
+            
+            System.out.println("----------------------------------");
+            times.clear();
+        } 
+        //loop seniors    
+        System.out.println();
+        System.out.println("Senior Top 5:");
+        System.out.println();
+        for (int i = 0; i < 4; i++) {
+            for (Member member : seniorMembers) {
+                for (Discipline discipline : member.getDisciplines()) {
+                    if (discipline.getType().equals(disciplineNames[i]) && discipline.getBestTime() != 0.0f) {
+                        times.add(discipline);
+                    }
+                }
+            }
+            Collections.sort(times);
+            System.out.println(disciplineNames[i]+": ");
+            for (Discipline discipline : times) {
+                System.out.println(discipline.getOwner() +" - " + discipline.getBestTime());
+            }
+            //Gør så der ikke er to linjer til sidst, på grund af hovedmenu linje
+            if (i<3) {
+                System.out.println("----------------------------------");
+            }
+            times.clear();
+        }
+    }
 }
 

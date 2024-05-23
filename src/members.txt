@@ -1,3 +1,6 @@
-Banan,131313,true,2020,true,false,Træner Marcus,endOfMember,Brystsvømning,7.21,endOfDisciplines,Hutlighut,20,30.15,brystsvømning,endOfEvents
+Banan,131313,true,2020,true,false,Træner Marcus,endOfMember,Brystsvømning,7.21,Butterfly,5.2,endOfDisciplines,Hutlighut,20,30.15,brystsvømning,endOfEvents
 Ali,19191919,true,1999,false,false,Træner Marcus,endOfMember,Butterfly,10.5,Rygcrawl,0.0,endOfDisciplines,endOfEvents
-Marcus,12121212,true,1642,true,false,Tr�ner Ali,endOfMember,Butterfly,0.1,endOfDisciplines,Den store sommerfugl turnering og bagedyst,50,12.24,butterfly,Hutlighust,1,60.2,butterfly,Kanban,60,12.32,butterfly,endOfEvents
+Marcus,12121212,true,1642,true,false,Træner Ali,endOfMember,Butterfly,0.1,endOfDisciplines,Den store sommerfugl turnering og bagedyst,50,12.24,butterfly,Hutlighust,1,60.2,butterfly,Kanban,60,12.32,butterfly,endOfEvents
+Adrian,20202020,true,2006,false,false,Træner Marcus,endOfMember,Rygcrawl,7.2,endOfDisciplines,endOfEvents
+Sofus,30303030,true,1992,false,false,Træner Marcus,endOfMember,Butterfly,15.4,Rygcrawl,6.1,endOfDisciplines,endOfEvents
+Kim,40404040,true,2008,false,false,Træner Marcus,endOfMember,Butterfly,3.4,Rygcrawl,2.0,endOfDisciplines,endOfEvents

@@ -114,6 +114,10 @@ public class Member {
         return disciplines;
     }
 
+    public String getAgeGroup(){
+        return ageGroup;
+    }
+
     public String toString() {
         String aktiv = "Nej";
         String konkurrence = "Nej";
@@ -142,17 +146,27 @@ public class Member {
         //TODO: Gør så der ikke kan tilføjes mere en end af hver discipline.
         switch (valg) {
             case 1:
-                disciplines.add(new Discipline("Butterfly", pr));
+                disciplines.add(new Discipline("Butterfly", pr, name));
                 break;
             case 2:
-                disciplines.add(new Discipline("Crawl", pr));
+                disciplines.add(new Discipline("Crawl", pr, name));
                 break;
             case 3:
-                disciplines.add(new Discipline("Rygcrawl", pr));
+                disciplines.add(new Discipline("Rygcrawl", pr, name));
                 break;
             case 4:
-                disciplines.add(new Discipline("Brystsvømning", pr));
+                disciplines.add(new Discipline("Brystsvømning", pr, name));
                 break;
         }
     }
+
+    public void printBestTimes(){
+
+        System.out.println("------------------------------");
+        System.out.println(name + " (" + phoneNumber + "):");
+        
+        for (Discipline discipline : disciplines) {
+            System.out.println(discipline.getType() + ": " + discipline.getBestTime() + " (min.sek)");
+        }
+    } 
 }
