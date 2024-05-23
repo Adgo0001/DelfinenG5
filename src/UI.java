@@ -67,6 +67,8 @@ public class UI {
                 case 6:
                     Booking.addDiscipline(scan);
                     break;
+                case 7:
+                    Booking.addEvent(scan);
                 case 9:
                     break;
                 default:

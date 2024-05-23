@@ -197,6 +197,51 @@ public class Booking {
         }
     }
 
+    public static void addEvent(Scanner scan){
+        System.out.println("Hvilket medlem kunne du tænke dig at tilføje et event til? (Indtast telefonnummer).");
+        int phoneNumber = scan.nextInt();
+
+        for(Member member : members){
+            if (member.getPhoneNumber() == phoneNumber) {
+                System.out.print(member.getName() + " har lige nu disciplinerne: ");
+                if (member.getDisciplines().isEmpty()) {
+                    System.out.println("Medlemmet har ingen discipliner, og der kan derfor ikke tilføjes nogle events");
+                }
+                for (Discipline discipline: member.getDisciplines()) {
+                    System.out.print(discipline + ", ");
+                }
+                System.out.println();
+                // TODO: indsæt fejlbehandling hvis man taster andet end 1-4
+                System.out.println("Vælg en disciplin, som der skal tilføjes event til (1: butterfly, 2: crawl, 3: rygcrawl, 4: brystsvømning): ");
+                String[] disciplineNames = {"butterfly", "crawl", "rygcrawl", "brystsvømning"};
+                int valg = scan.nextInt();
+
+                boolean found = false;
+                for (Discipline discipline : member.getDisciplines()) {
+                    if (discipline.getType().equals(disciplineNames[valg-1])) {
+                        System.out.println("Navn på eventet?");
+                        String eventName = scan.nextLine();
+        
+                        System.out.println("Hvilken plads kom medlemmet på?");
+                        int eventPlacement = scan.nextInt();
+        
+                        System.out.println("Hvad tid fik medlemmet?");
+                        float eventTime = scan.nextFloat();
+
+                        discipline.createEvent(eventName, eventTime, eventPlacement);
+                        found = true;
+                    }   
+                }
+                
+                if(!found){
+                    System.out.println("Medlemmet har ikke denne disciplin. Du vil blive sendt tilbage til hovedmenuen.");
+                    break;
+                }
+                }
+            }
+        }
+    }
+
     public static void removeMember(Scanner scan) {
         System.out.println("Du sletter nu et medlem.");
         System.out.println("Skriv telefonnummeret på det medlem du vil slette.");
