@@ -14,8 +14,8 @@ public class Discipline {
         return type + ": " + bestTime + " (min,sek)";
     }
 
-    public void createEvent(String eventType, float eventBestTime, int eventPlacement){
-        events.add(new Event(eventType, eventBestTime, eventPlacement));
+    public void createEvent(String eventType, float eventBestTime, int eventPlacement, String disciplineType){
+        events.add(new Event(eventType, eventBestTime, eventPlacement, disciplineType));
     }
 
     public ArrayList<Event> getEvents(){
@@ -24,5 +24,9 @@ public class Discipline {
 
     public String getType(){
         return type;
+    }
+    
+    public float getBestTime(){
+        return bestTime;
     }
 }

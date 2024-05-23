@@ -206,12 +206,14 @@ public class Booking {
                 System.out.print(member.getName() + " har lige nu disciplinerne: ");
                 if (member.getDisciplines().isEmpty()) {
                     System.out.println("Medlemmet har ingen discipliner, og der kan derfor ikke tilføjes nogle events");
+                    break;
                 }
+                //TODO: Vis også events for medlemmet
                 for (Discipline discipline: member.getDisciplines()) {
                     System.out.print(discipline + ", ");
                 }
                 System.out.println();
-                // TODO: indsæt fejlbehandling hvis man taster andet end 1-4
+                //TODO: indsæt fejlbehandling hvis man taster andet end 1-4
                 System.out.println("Vælg en disciplin, som der skal tilføjes event til (1: butterfly, 2: crawl, 3: rygcrawl, 4: brystsvømning): ");
                 String[] disciplineNames = {"butterfly", "crawl", "rygcrawl", "brystsvømning"};
                 int valg = scan.nextInt();
@@ -229,7 +231,7 @@ public class Booking {
                         System.out.println("Hvad tid fik medlemmet? (min,sek)");
                         float eventTime = scan.nextFloat();
 
-                        discipline.createEvent(eventName, eventTime, eventPlacement);
+                        discipline.createEvent(eventName, eventTime, eventPlacement, discipline.getType().toLowerCase());
                         found = true;
                     }   
                 }
@@ -313,7 +315,21 @@ public class Booking {
             sb.append(member.getCompetitive()).append(",");
             sb.append(member.getRestance()).append(",");
             sb.append(member.getTrainer()).append(",");
-            sb.append("endOfMember");
+            sb.append("endOfMember").append(",");
+            for (Discipline discipline : member.getDisciplines()) {
+                sb.append(discipline.getType()).append(",");
+                sb.append(discipline.getBestTime()).append(",");
+            }
+            sb.append("endOfDisciplines").append(",");
+            for (Discipline discipline : member.getDisciplines()) {
+                for (Event event : discipline.getEvents()) {
+                    sb.append(event.getName()).append(",");
+                    sb.append(event.getPlacement()).append(",");
+                    sb.append(event.getTime()).append(",");
+                    sb.append(event.getType());
+                }
+            }
+            sb.append("endOfEvents");
             a++;
             if (a < members.size()) {
                 sb.append("\n");

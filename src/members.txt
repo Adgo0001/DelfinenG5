@@ -1,2 +1,2 @@
-Banan,131313,true,2020,true,false,Træner Marcus,endOfMember
-Ali,19191919,true,1999,false,false,Træner Marcus,endOfMember
+Banan,131313,true,2020,true,false,Træner Marcus,endOfMember,endOfDisciplines,endOfEvents
+Ali,19191919,true,1999,false,false,Træner Marcus,endOfMember,Butterfly,10.5,Rygcrawl,0.0,endOfDisciplines,endOfEvents
