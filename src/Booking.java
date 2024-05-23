@@ -218,14 +218,15 @@ public class Booking {
 
                 boolean found = false;
                 for (Discipline discipline : member.getDisciplines()) {
-                    if (discipline.getType().equals(disciplineNames[valg-1])) {
+                    if (discipline.getType().toLowerCase().equals(disciplineNames[valg-1].toLowerCase())) {
                         System.out.println("Navn på eventet?");
+                        scan.nextLine();
                         String eventName = scan.nextLine();
         
                         System.out.println("Hvilken plads kom medlemmet på?");
                         int eventPlacement = scan.nextInt();
         
-                        System.out.println("Hvad tid fik medlemmet?");
+                        System.out.println("Hvad tid fik medlemmet? (min,sek)");
                         float eventTime = scan.nextFloat();
 
                         discipline.createEvent(eventName, eventTime, eventPlacement);
@@ -240,7 +241,6 @@ public class Booking {
                 }
             }
         }
-    }
 
     public static void removeMember(Scanner scan) {
         System.out.println("Du sletter nu et medlem.");

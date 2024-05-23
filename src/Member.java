@@ -10,7 +10,7 @@ public class Member {
     private boolean competitive;
     private boolean restance;
     private String trainer;
-    private ArrayList<Discipline> disciplines = new ArrayList<>(4);
+    private ArrayList<Discipline> disciplines = new ArrayList<>();
 
     public Member(String name, int phoneNumber, boolean active, int birthYear){
         this.name = name;
@@ -142,16 +142,16 @@ public class Member {
         //TODO: Gør så der ikke kan tilføjes mere en end af hver discipline.
         switch (valg) {
             case 1:
-                disciplines.add(0,new Discipline("Butterfly", pr));
+                disciplines.add(new Discipline("Butterfly", pr));
                 break;
             case 2:
-                disciplines.add(1, new Discipline("Crawl", pr));
+                disciplines.add(new Discipline("Crawl", pr));
                 break;
             case 3:
-                disciplines.add(2, new Discipline("Rygcrawl", pr));
+                disciplines.add(new Discipline("Rygcrawl", pr));
                 break;
             case 4:
-                disciplines.add(3, new Discipline("Brystsvømning", pr));
+                disciplines.add(new Discipline("Brystsvømning", pr));
                 break;
         }
     }
