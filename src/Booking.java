@@ -183,7 +183,7 @@ public class Booking {
                 System.out.println("Vil du tilføje en PR til denne disciplin? (j/n): ");
                 char addPR = scan.next().charAt(0);
                 if (addPR == 'j'){
-                    System.out.println("Indtast PR (minutter.sekunder fx 7,58): ");
+                    System.out.println("Indtast PR (mm.ss fx 7,58): ");
                     float pr = scan.nextFloat();
                     member.addMemberDiscipline(valg, pr);
                     System.out.println("Ny disciplin med PR tilføjet.");
@@ -228,7 +228,7 @@ public class Booking {
                         System.out.println("Hvilken plads kom medlemmet på?");
                         int eventPlacement = scan.nextInt();
         
-                        System.out.println("Hvad tid fik medlemmet? (min,sek)");
+                        System.out.println("Hvad tid fik medlemmet? (mm,ss)");
                         float eventTime = scan.nextFloat();
 
                         discipline.createEvent(eventName, eventTime, eventPlacement, discipline.getType().toLowerCase());
