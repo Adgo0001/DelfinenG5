@@ -1,14 +1,13 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Collections;
-
-import javax.management.modelmbean.ModelMBeanAttributeInfo;
 
 public class Booking {
     //0: Passiv, 1: Under 18, 2: Over 18, 3:Over 60
     private static int[] priceList = {500, 1000, 1600, 1200};
-
+    
+    private static ArrayList<Member> members = new ArrayList<> ();
+    
     public static void updatePrices(Scanner scan) {
         System.out.println("Nuværende Passiv pris: " + priceList[0] + ",-");
         System.out.println("Hvad skal den nye pris på Passiv være?");
@@ -23,8 +22,6 @@ public class Booking {
         System.out.println("Hvad skal den nye pris på Pensionist være?");
         priceList[3] = scan.nextInt();
     }
-
-    private static ArrayList<Member> members = new ArrayList<> ();
 
     public static int[] getPriceList () {
         return priceList;
